@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="rover_arm" xmlns:xacro="http://wiki.ros.org/xacro">
+    <link name="world" />
+    <joint name="fixed" type="fixed">
+        <parent link="world" />
+        <child link="base_link" />
+    </joint>
+    <link name="base_link">
+        
+<inertial>
+            <origin xyz="-0.00891037630012622 0.0355262079953823 0.0256030519540475" rpy="0 0 0" />
+            <mass value="1.30715655480583" />
+            <inertia ixx="0.00392064188010516" ixy="-6.72153418940467E-06" ixz="-1.97313462476888E-05" iyy="0.00636237046295776" iyz="1.05442262544725E-06" izz="0.00280136237521551" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://rover_arm/meshes/base_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://rover_arm/meshes/base_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="link_1">
+        
+<inertial>
+            <origin xyz="-0.0195319998537727 7.71010126460914E-05 0.0469386123074005" rpy="0 0 0" />
+            <mass value="0.314228469203757" />
+            <inertia ixx="0.000495013790842996" ixy="-3.14438356359346E-14" ixz="1.54140330313259E-05" iyy="0.000576946486735243" iyz="-1.98256308040791E-11" izz="0.000408635697281522" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://rover_arm/meshes/link_1.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://rover_arm/meshes/link_1.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_1" type="continuous">
+        <origin xyz="0 0 0.0855" rpy="0 0 0" />
+        <parent link="base_link" />
+        <child link="link_1" />
+        <axis xyz="0 0 1" />
+        <limit effort="1" velocity="1" />
+    </joint>
+    <link name="link_2">
+        
+<inertial>
+            <origin xyz="0.268671070027866 3.90880410861133E-05 -0.0553400320375147" rpy="0 0 0" />
+            <mass value="0.39798576790004" />
+            <inertia ixx="0.000293541664065461" ixy="-1.38952022057523E-13" ixz="0.000699732126389811" iyy="0.00335990157920832" iyz="-5.14287578978042E-13" izz="0.00329174954869476" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://rover_arm/meshes/link_2.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://rover_arm/meshes/link_2.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_2" type="revolute">
+        <origin xyz="-0.032952 0 0.165" rpy="3.1416 -1.1779 3.1416" />
+        <parent link="link_1" />
+        <child link="link_2" />
+        <axis xyz="0 1 0" />
+        <limit lower="0.1" upper="2.0071" effort="1" velocity="1" />
+    </joint>
+    <link name="link_3">
+        
+<inertial>
+            <origin xyz="0.29002415645128 0.021297453158669 0.0293438378190704" rpy="0 0 0" />
+            <mass value="0.576236744035492" />
+            <inertia ixx="0.00021184290838867" ixy="4.31254354727555E-05" ixz="-0.00035066989101367" iyy="0.00815056592586827" iyz="1.98711168879034E-06" izz="0.00816685771464534" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://rover_arm/meshes/link_3.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://rover_arm/meshes/link_3.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_3" type="revolute">
+        <origin xyz="0.52425 0 -0.11633" rpy="-3.1416 0.53868 -3.1416" />
+        <parent link="link_2" />
+        <child link="link_3" />
+        <axis xyz="0 -1 0" />
+        <limit lower="0" upper="1.9024" effort="1" velocity="1" />
+    </joint>
+    <link name="link_4">
+        
+<inertial>
+            <origin xyz="-0.0239636846063797 0.000343844586633193 -0.0320519184224413" rpy="0 0 0" />
+            <mass value="0.304063002423449" />
+            <inertia ixx="0.000168346881503936" ixy="5.19037104219468E-08" ixz="5.04876660901921E-05" iyy="0.000284791863669367" iyz="3.09040533690001E-08" izz="0.000293228812493878" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://rover_arm/meshes/link_4.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://rover_arm/meshes/link_4.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_4" type="revolute">
+        <origin xyz="0.57485 0 0.016346" rpy="-3.1416 0.1018 -3.1416" />
+        <parent link="link_3" />
+        <child link="link_4" />
+        <axis xyz="0 1 0" />
+        <limit lower="0" upper="3.1416" effort="1" velocity="1" />
+    </joint>
+    <link name="link_5">
+        
+<inertial>
+            <origin xyz="-0.746730758672397 2.67849996836928E-06 0.0723370346638456" rpy="0 0 0" />
+            <mass value="0.391536702565279" />
+            <inertia ixx="0.000542732691188021" ixy="4.89215770554729E-08" ixz="-5.82094314491292E-06" iyy="0.000295319540194813" iyz="-1.13680375127436E-08" izz="0.000541458652916274" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://rover_arm/meshes/link_5.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://rover_arm/meshes/link_5.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_5" type="revolute">
+        <origin xyz="-0.0014191 -2.4995E-05 -0.025324" rpy="3.1416 0.67328 3.1416" />
+        <parent link="link_4" />
+        <child link="link_5" />
+        <axis xyz="0.66632 0 0.74567" />
+        <limit lower="0" upper="1.5708" effort="1" velocity="1" />
+    </joint>
+    <link name="camera_link">
+        
+<inertial>
+            <origin xyz="-0.746730758672397 2.67849996836928E-06 0.0723370346638456" rpy="0 0 0" />
+            <mass value="0.391536702565279" />
+            <inertia ixx="0.000542732691188021" ixy="4.89215770554729E-08" ixz="-5.82094314491292E-06" iyy="0.000295319540194813" iyz="-1.13680375127436E-08" izz="0.000541458652916274" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://rover_arm/meshes/camera_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://rover_arm/meshes/camera_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="camera_joint" type="fixed">
+        <origin xyz="-0.0014191 -2.4995E-05 -0.025324" rpy="0 0 0" />
+        <parent link="link_5" />
+        <child link="camera_link" />
+        <axis xyz="1 0 0" />
+    </joint>
+    <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
+    <xacro:sensor_d435 name="camera" topics_ns="camera" parent="camera_1" publish_pointcloud="true">
+        <origin xyz="0 0 0" rpy="0 0 ${pi/2}" />
+    </xacro:sensor_d435>
+    
+<transmission name="trans_joint_1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_1">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_1_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_2">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_2_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_3">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_3_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_4">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_4">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_4_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_5">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_5">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_5_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+</robot>

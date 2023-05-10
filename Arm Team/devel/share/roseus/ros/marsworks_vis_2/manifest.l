@@ -1,0 +1,1 @@
+/home/marsworks/Mars-Works-2023/Arm Team/devel/.private/marsworks_vis_2/share/roseus/ros/marsworks_vis_2/manifest.l

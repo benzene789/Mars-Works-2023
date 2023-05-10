@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: rover_arm
+    relative_path: urdf/rover_arm.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/rover_arm.srdf
+  CONFIG:
+    author_name: Syed
+    author_email: sreza1@sheffield.ac.uk
+    generated_timestamp: 1657882622
